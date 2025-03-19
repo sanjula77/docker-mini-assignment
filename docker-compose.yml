@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  api:
+    image: data-api
+    container_name: my-api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres
+    container_name: my-db
+    environment:
+      POSTGRES_PASSWORD: docker
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis
+    container_name: my-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  db-data:
+
+
+# version: '3.8'
+
+# services:
+#   api:
+#     image: data-api
+#     container_name: my-api
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - db
+
+#   db:
+#     image: postgres
+#     container_name: my-db
+#     environment:
+#       POSTGRES_PASSWORD: docker
+#     volumes:
+#       - db-data:/var/lib/postgresql/data
+#     ports:
+#       - "5432:5432"
+
+# volumes:
+#   db-data:
