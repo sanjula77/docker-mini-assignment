@@ -19,3 +19,37 @@ This project is a mini-assignment that demonstrates how to **containerize a REST
 ```sh
 git clone https://github.com/sanjula77/docker-mini-assignment.git
 cd docker-mini-assignment
+
+### **Step 2: Build and Run the Containers**
+Use Docker Compose to build and start the containers:
+```sh
+docker-compose up --build
+```
+
+### **Step 3: Access the API**
+Once the containers are up and running, you can access the API at:
+```
+http://localhost:3000/data
+```
+
+### **Step 4: Stop the Containers**
+To stop the containers, use:
+```sh
+docker-compose down
+```
+
+## 📂 Project Structure
+```
+docker-compose.yml
+Dockerfile
+package.json
+README.md
+server.js
+```
+
+## 📋 API Endpoints
+- **GET /data**: Returns a JSON object with a message.
+
+## 📝 License
+This project is licensed under the MIT License.
+
